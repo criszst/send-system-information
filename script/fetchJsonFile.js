@@ -45,7 +45,6 @@ fetchJSONFile('./json/uptime.json', function(data) {
     const date = moment(723386).format('LTS')
 
     document.getElementById('uptimeJson').innerHTML = `<br class="text">Uptime: desde ${date} || ${data}</br>`
-    console.log(data)
 });
 
 
