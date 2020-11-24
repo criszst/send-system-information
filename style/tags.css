@@ -2,12 +2,27 @@ body {
     background-color: #ffffff;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+
+/* Class */
+
+.text {
+    color: black;
+    word-wrap: keep-all;
+    font-family: cursive, 'Source Sans Pro', sans-serif;
 }
 
-p {
-    color: black;
-    word-wrap: break-word;
+.loading-screen {
+    animation: loading-screen;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-direction: normal;
+}
+
+@keyframes loading-screen {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
 }

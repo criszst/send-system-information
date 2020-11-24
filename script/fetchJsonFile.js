@@ -13,18 +13,42 @@ function fetchJSONFile(path, callback) {
 }
 
 
-fetchJSONFile('./json/cpu.json', function(data) {
-    document.getElementById('cpuJson').innerHTML = data
+fetchJSONFile('./json/arch.json', function(data) {
+    document.getElementById('archJson').innerHTML = `<br class="text">Windows Arch: ${data}</br>`
 });
+
+
+fetchJSONFile('./json/cpu.json', function(data) {
+    document.getElementById('cpuJson').innerHTML = `<br class="text">${data}</br>`
+});
+
 
 fetchJSONFile('./json/hostname.json', function(data) {
-    document.getElementById('hostnameJson').innerHTML = data
+    document.getElementById('hostnameJson').innerHTML = `<br class="text">${data}</br>`
 });
+
+
+fetchJSONFile('./json/plataform.json', function(data) {
+    document.getElementById('plataformJson').innerHTML = `<br class="text">Plataforma: ${data}</br>`
+});
+
 
 fetchJSONFile('./json/networkInterfaces.json', function(data) {
-    document.getElementById('networkInterfacesJson').innerHTML = data
+    document.getElementById('networkInterfacesJson').innerHTML = `<br class="text">${data}</br>`
 });
 
+
 fetchJSONFile('./json/uptime.json', function(data) {
-    document.getElementById('uptimeJson').innerHTML = data
+    const moment = require('moment')
+    moment.locale('pt-br')
+
+    const date = moment(723386).format('LTS')
+
+    document.getElementById('uptimeJson').innerHTML = `<br class="text">Uptime: desde ${date} || ${data}</br>`
+    console.log(data)
+});
+
+
+fetchJSONFile('./json/userinfo.json', function(data) {
+    document.getElementById('userinfoJson').innerHTML = `<br class="text">System Userinfo: ${data}</br>`
 });
