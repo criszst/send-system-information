@@ -1,0 +1,34 @@
+.text {
+    color: white;
+    word-wrap: keep-all;
+    font-family: cursive, 'Source Sans Pro', sans-serif;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-screen {
+    margin-top: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-screen {
+    animation: loading-screen;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-direction: normal;
+}
+
+@keyframes loading-screen {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
