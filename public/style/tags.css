@@ -11,6 +11,19 @@ body {
     font-family: cursive, 'Source Sans Pro', sans-serif;
 }
 
+.btnGroup {
+    margin-top: 165px;
+}
+
+.btn {
+    border: 5px solid #2c3e50;
+    background-color: #34495e;
+    color: white;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 2px;
+}
+
 .loading-screen {
     animation: loading-screen;
     animation-duration: 2s;
@@ -25,4 +38,10 @@ body {
     to {
         opacity: 1
     }
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
