@@ -13,12 +13,17 @@ module.exports = {
         return os.hostname()
     },
 
+    homedir() {
+        return os.homedir()
+    },
+
     plataform() {
         return os.platform()
     },
 
     networkInterfaces() {
         return os.networkInterfaces()
+        os.homedir
     },
 
     uptime_system() {
@@ -28,4 +33,6 @@ module.exports = {
     userinfo() {
         return os.userInfo()
     },
+
+    
 }

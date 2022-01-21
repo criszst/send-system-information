@@ -17,9 +17,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/arch', (req, res) => {
-    const textArch = `Windows ${api.arch()}`
-
-    res.status(200).json(textArch)
+    res.status(200).json(`Windows ${api.arch()}`)
 })
 
 app.get('/cpu', (req, res) => {
@@ -28,6 +26,10 @@ app.get('/cpu', (req, res) => {
 
 app.get('/hostname', (req, res) => {
     res.status(200).json(api.hostname())
+})
+
+app.get('/homedir', (req, res) => {
+    res.status(200).json(api.homedir())
 })
 
 app.get('/network', (req, res) => {
