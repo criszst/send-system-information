@@ -14,11 +14,12 @@ app.use(express.static('public'))
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/views/index.html')
 
-    // res.status(200).json(api.arch() + '\n' + api.cpu() + '\n' + api.hostname() + '\n' + api.networkInterfaces() + '\n' + api.plataform() + '\n' + api.uptime())
 })
 
 app.get('/arch', (req, res) => {
-    res.status(200).json(api.arch())
+    const textArch = `Windows ${api.arch()}`
+
+    res.status(200).json(textArch)
 })
 
 app.get('/cpu', (req, res) => {
