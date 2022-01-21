@@ -5,6 +5,7 @@ const api = require('./public/system/exports_functions.js')
 const port = 3000
 
 const moment = require('moment');
+
 require('moment-duration-format');
 
 moment.locale('pt-br')
@@ -18,14 +19,16 @@ app.get('/', (req, res) => {
 
 app.get('/arch', (req, res) => {
     res.status(200).json(`Windows ${api.arch()}`)
-})
+}),
 
 app.get('/cpu', (req, res) => {
-    res.status(200).json(api.cpu())
-})
+    res.status(200).json(JSON.stringify(api.cpu()[0]).substring(0, 49).replace('{', ''))
+}),
+
 
 app.get('/hostname', (req, res) => {
     res.status(200).json(api.hostname())
+
 })
 
 app.get('/homedir', (req, res) => {
