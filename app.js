@@ -3,7 +3,7 @@ const app = express()
 const port = 3000
 
 const api = require('./public/system/exports_functions.js')
-const rmvObj = require('./public/script/removeObject')
+/* const rmvObj = require('./public/script/removeObject') */
 
 const moment = require('moment');
 
@@ -37,7 +37,7 @@ app.get('/homedir', (req, res) => {
 })
 
 app.get('/network', (req, res) => {
-    res.status(200).json(api.networkInterfaces())
+    res.status(200).jsonp(api.networkInterfaces())
 })
 
 app.get('/plataform', (req, res) => {
@@ -52,15 +52,6 @@ app.get('/uptime', (req, res) => {
 
 app.get('/userinfo', (req, res) => {
     res.status(200).json(api.userinfo())
-})
-
-app.get('/allInfo', (req, res) => {
-/*     const info = [
-       `arch: ${api.arch()}`,
-       ``
-    ] */
-    res.status(200).json(api.userinfo())
-    console.log(rmvObj.removeObject(api.userinfo()))
 })
 
 app.listen(port, () => {
