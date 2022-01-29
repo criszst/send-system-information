@@ -23,7 +23,6 @@ module.exports = {
 
     networkInterfaces() {
         return os.networkInterfaces()
-        os.homedir
     },
 
     uptime_system() {
