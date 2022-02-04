@@ -34,7 +34,7 @@ module.exports = {
     },
 
     type() {
-        let typeArch = String
+       let typeArch = String
 
        if(os.type() === 'Windows_NT') typeArch = 'Windows'
 
