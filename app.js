@@ -13,13 +13,23 @@ moment.locale('pt-br')
 
 app.use(express.static('public'))
 
+/* var myLogger = function (req, res, next) {
+    console.log('LOGGED')
+    next()
+  }
+  
+  app.use(myLogger) */
+  
+  
+
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/views/index.html')
 
 })
 
-app.get('/arch', (req, res) => {
+app.get('/arch', (req, res, next) => {
     res.status(200).json(`${api.type()} ${api.arch()}`)
+    next()
 }),
 
 app.get('/cpu', (req, res) => {
