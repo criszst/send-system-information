@@ -33,5 +33,14 @@ module.exports = {
         return os.userInfo()
     },
 
+    type() {
+        let typeArch = String
+
+       if(os.type() === 'Windows_NT') typeArch = 'Windows'
+
+       else if(os.type() !== 'Windows_NT' && os.type() === 'Darwin') typeArch = 'Mac OS'
+
+       return typeArch;
+    }
     
 }

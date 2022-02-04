@@ -1,9 +1,9 @@
 const express = require('express')
+
 const app = express()
 const port = 3000
 
 const api = require('./public/system/exports_functions.js')
-/* const rmvObj = require('./public/script/removeObject') */
 
 const moment = require('moment');
 
@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/arch', (req, res) => {
-    res.status(200).json(`Windows ${api.arch()}`)
+    res.status(200).json(`${api.type()} ${api.arch()}`)
 }),
 
 app.get('/cpu', (req, res) => {
@@ -51,7 +51,7 @@ app.get('/uptime', (req, res) => {
 })
 
 app.get('/userinfo', (req, res) => {
-    res.status(200).json(api.userinfo())
+    res.status(200).json(`${api.userinfo()}`)
 })
 
 app.listen(port, () => {
