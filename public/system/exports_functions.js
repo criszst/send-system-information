@@ -7,7 +7,7 @@ const api = {
     networkInterfaces: require('./system_information.js').networkInterfaces,
     uptime: require('./system_information.js').uptime_system,
     userinfo: require('./system_information.js').userinfo,
-    type: require('./system_information').type,
+    type: require('./system_information.js').type,
     /* totalMem: require('./system_information').totalMem,
     freeMem: require('./system_information').freeMem, */
 }

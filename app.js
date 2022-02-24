@@ -13,13 +13,9 @@ moment.locale('pt-br')
 
 app.use(express.static('public'))
 
-/* var myLogger = function (req, res, next) {
-    console.log('LOGGED')
-    next()
-  }
-  
-  app.use(myLogger) */
-  
+/* function changeBg() {
+    document.body.style.backgroundColor = 'blue'
+} */
   
 
 app.get('/', (req, res) => {
@@ -29,7 +25,7 @@ app.get('/', (req, res) => {
 
 app.get('/arch', (req, res, next) => {
     res.status(200).json(`${api.type()} ${api.arch()}`)
-    next()
+/*     changeBg() */
 }),
 
 app.get('/cpu', (req, res) => {
@@ -47,7 +43,7 @@ app.get('/homedir', (req, res) => {
 })
 
 app.get('/network', (req, res) => {
-    res.status(200).jsonp(api.networkInterfaces())
+    res.status(200).json(api.networkInterfaces())
 })
 
 app.get('/plataform', (req, res) => {
