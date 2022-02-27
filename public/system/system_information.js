@@ -46,12 +46,12 @@ module.exports = {
 
     totalMem() {
       checkNumber(os.totalmem())
-      console.log(os.totalmem())
+
       return os.totalmem()
     },
 
     freeMem() {
-     checkNumber(os.totalmem())
+     checkNumber(os.freemem())
 
       return os.freemem()
     }
