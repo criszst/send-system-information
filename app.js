@@ -12,10 +12,6 @@ require('moment-duration-format');
 moment.locale('pt-br')
 
 app.use(express.static('public'))
-
-/* function changeBg() {
-    document.body.style.backgroundColor = 'blue'
-} */
   
 
 app.get('/', (req, res) => {
@@ -24,8 +20,8 @@ app.get('/', (req, res) => {
 })
 
 app.get('/arch', (req, res, next) => {
-    res.status(200).json(`${api.type()} ${api.arch()}`)
-/*     changeBg() */
+    res.status(200).json(`${api.type()} ${api.arch()} ${api.totalMem() / 1024 / 1024 / 1024} ${api.freeMem() / 1024 / 1024 / 1024}`)
+
 }),
 
 app.get('/cpu', (req, res) => {

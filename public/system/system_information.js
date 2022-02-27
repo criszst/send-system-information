@@ -1,4 +1,5 @@
 const os = require('os')
+const checkNumber = require('../script/functions.js')
 
 module.exports = {
     arch() {
@@ -36,11 +37,23 @@ module.exports = {
     type() {
        let typeArch = String
 
-       if(os.type() === 'Windows_NT') typeArch = 'Windows'
+       os.type() === "Windows_NT" ? typeArch = "Windows" : typeArch = '' || 
+       os.type() === "Linux" ? typeArch = "Linux" : typeArch = '' ||
+       os.type() === "Darwin" ? typeArch = "Mac OS" : typeArch = ''
 
-       else if(os.type() !== 'Windows_NT' && os.type() === 'Darwin') typeArch = 'Mac OS'
+       return typeArch; 
+    },
 
-       return typeArch;
+    totalMem() {
+      checkNumber(os.totalmem())
+      console.log(os.totalmem())
+      return os.totalmem()
+    },
+
+    freeMem() {
+     checkNumber(os.totalmem())
+
+      return os.freemem()
     }
     
 }
