@@ -49,6 +49,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js"></script>
 
     <script> 
+    
     var titles = [
             "Arch",
             "Cpu",
@@ -81,7 +82,7 @@ for (i = 0; i < 8; i++) {
     btnArray.push(document.createElement('BUTTON'))
     btnArray[i].id = i
  
-    btnArray[i].addEventListener("click", function() {
+    btnArray[i].addEventListener("click", () => {
      
      window.location.href = url[this.id]
    }, false)
