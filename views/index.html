@@ -27,6 +27,7 @@
 
     <link type="text/css" rel="stylesheet" href="css/tags.css">
 
+
     <title>System UI</title>
 
 </head>
@@ -38,57 +39,7 @@
         <div>
 
             <div class="container btnGroup">
-
-                <div class="center">
-
-                    <a type="button" class="btn btn-primary spaceBetweenBtn" href="/arch">Arch</a>
-
-                </div>
-
-                <div class="center">
-
-                    <a type="button" class="btn btn-primary spaceBetweenBtn" href="/cpu">Cpu</a>
-
-                </div>
-
-
-                <div class="center">
-
-                    <a type="button" class="btn btn-primary spaceBetweenBtn" href="/hostname">Hostname</a>
-
-                </div>
-
-                <div class="center">
-
-                    <a type="button" class="btn btn-primary spaceBetweenBtn" href="/homedir">Homedir</a>
-
-                </div>
-
-                <div class="center">
-
-                    <a type="button" class="btn btn-primary spaceBetweenBtn" href="/plataform">Plataform</a>
-
-                </div>
-
-
-                <div class="center">
-
-                    <a type="button" class="btn btn-primary spaceBetweenBtn" href="/network">Network Interfaces</a>
-
-                </div>
-
-
-                <div class="center">
-
-                    <a type="button" class="btn btn-primary spaceBetweenBtn" href="/uptime">Uptime</a>
-
-                </div>
-
-                <div class="center">
-
-                    <a type="button" class="btn btn-primary spaceBetweenBtn" href="/userinfo">Userinfo</a>
-
-                </div>
+    
 
         </div>
 
@@ -96,6 +47,58 @@
 
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js"></script>
+
+    <script> 
+    var titles = [
+            "Arch",
+            "Cpu",
+            "Hostname",
+            "Homedir",
+            "Plataform",
+            "Network Interfaces",
+            "Uptime",
+            "Userinfo",
+        ]
+        
+        var url = [
+            "/arch",
+            "/cpu",
+            "/hostname",
+            "/homedir",
+            "/plataform",
+            "/network",
+            "/uptime",
+            "/userinfo",
+        ]
+        
+var btnArray = [
+    
+]   
+        
+for (i = 0; i < 8; i++) {
+    document.getElementById("teste")
+
+    btnArray.push(document.createElement('BUTTON'))
+    btnArray[i].id = i
+ 
+    btnArray[i].addEventListener("click", function() {
+     
+     window.location.href = url[this.id]
+   }, false)
+
+    let lbl = document.createTextNode(titles[i])
+
+    btnArray[i].classList.add("btn")
+    btnArray[i].classList.add("btn-primary")
+    btnArray[i].classList.add("spaceBetweenBtn")
+    btnArray[i].classList.add("center")
+    btnArray[i].style.marginLeft = window.outerWidth / 2.2 + "px";
+ 
+    btnArray[i].appendChild(lbl)
+ 
+    document.body.appendChild(btnArray[i]);    
+}
+    </script>
 
 </body>
 

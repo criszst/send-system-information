@@ -1,5 +1,7 @@
+"use strict";
+
 const os = require('os')
-const checkNumber = require('../script/functions.js')
+const checkNumber = require('../script/functions')
 
 module.exports = {
     arch() {
@@ -47,13 +49,13 @@ module.exports = {
     totalMem() {
       checkNumber(os.totalmem())
 
-      return os.totalmem()
+      return os.totalmem() / 1024 / 1024 / 1024
     },
 
     freeMem() {
      checkNumber(os.freemem())
 
-      return os.freemem()
+      return os.freemem() / 1024 / 1024 / 1024
     }
     
 }

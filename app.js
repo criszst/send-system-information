@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/arch', (req, res, next) => {
-    res.status(200).json(`${api.type()} ${api.arch()} ${api.totalMem() / 1024 / 1024 / 1024} ${api.freeMem() / 1024 / 1024 / 1024}`)
+    res.status(200).json(`${api.type()} ${api.arch()} ${api.totalMem().toFixed(2)} ${api.freeMem().toFixed(2)}`)
 
 }),
 
