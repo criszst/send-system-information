@@ -82,7 +82,7 @@ for (i = 0; i < 8; i++) {
     btnArray.push(document.createElement('BUTTON'))
     btnArray[i].id = i
  
-    btnArray[i].addEventListener("click", () => {
+    btnArray[i].addEventListener("click", function() {
      
      window.location.href = url[this.id]
    }, false)
