@@ -59,6 +59,8 @@
             "Network Interfaces",
             "Uptime",
             "Userinfo",
+            "Total Memory",
+            "Free Memory",
         ]
         
         var url = [
@@ -70,13 +72,15 @@
             "/network",
             "/uptime",
             "/userinfo",
+            "/totalmem",
+            "/freemem"
         ]
         
 var btnArray = [
     
 ]   
         
-for (i = 0; i < 8; i++) {
+for (i = 0; i < 10; i++) {
     document.getElementById("teste")
 
     btnArray.push(document.createElement('BUTTON'))

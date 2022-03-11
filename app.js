@@ -53,7 +53,15 @@ app.get('/uptime', (req, res) => {
 })
 
 app.get('/userinfo', (req, res) => {
-    res.status(200).json(`${api.userinfo()}`)
+    res.status(200).json(api.userinfo())
+})
+
+app.get('/totalmem', (req, res) => {
+    res.status(200).json(`${api.totalMem().toFixed(3)} GB`)
+})
+
+app.get('/freemem', (req, res) => {
+    res.status(200).json(`${api.freeMem().toFixed(3)} GB`)
 })
 
 app.listen(port, () => {

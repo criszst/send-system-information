@@ -5,7 +5,8 @@ const checkNumber = require('../script/functions')
 
 module.exports = {
     arch() {
-        return os.arch()
+       console.log(os.loadavg())
+       return os.arch()
     },
 
     cpu() {

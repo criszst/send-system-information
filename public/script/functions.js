@@ -9,5 +9,4 @@ function checkNumber(nb) {
   return console.log(Number.isInteger(nb) === true)
 }
 
-
 module.exports = checkNumber
